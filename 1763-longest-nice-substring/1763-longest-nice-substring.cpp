@@ -29,8 +29,8 @@ public:
             if((set.find(tolower(s[i]))==set.end()) || (set.find(toupper(s[i])))==set.end())
             {
                 string prev=longestNiceSubstring(s.substr(0,i));
-            string next=longestNiceSubstring(s.substr(i+1));
-            return prev.size()>=next.size()?prev:next;
+                string next=longestNiceSubstring(s.substr(i+1));
+                return prev.size()>=next.size()?prev:next;
             }
             
         }
