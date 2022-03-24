@@ -1,11 +1,11 @@
 class Solution {
 public:
     int minimumDeletions(string s) {
-        int count=0;
-        stack<char>st;
-        // for(int i=s.size()-1;i>=0;i--)
+        // int count=0;
+        // stack<char>st;
+        // for(int i=0;i<s.size();i++)
         // {
-        //     if(st.size()>0 && st.top()<s[i])
+        //     if(st.size()>0 && st.top()>s[i])
         //     {
         //         count++;
         //         st.pop();
@@ -14,17 +14,24 @@ public:
         //         st.push(s[i]);
         //     }
         // }
-        for(int i=0;i<s.size();i++)
+        // return count;
+        int l=s.size();
+        int dp[l+1];
+        dp[0]=0;
+        int bcount=0;
+        for(int i=0;i<l;i++)
         {
-            if(st.size()>0 && st.top()>s[i])
+            if(s[i]=='a')
             {
-                count++;
-                st.pop();
+                dp[i+1]=min(dp[i]+1,bcount);
             }
-            else{
-                st.push(s[i]);
+            else if(s[i]=='b')
+            {
+                dp[i+1]=dp[i];
+                bcount++;
             }
         }
-        return count;
+        return dp[l];
+        
     }
 };
