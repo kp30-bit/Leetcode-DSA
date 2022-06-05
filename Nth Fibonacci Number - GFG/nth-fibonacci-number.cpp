@@ -11,8 +11,8 @@ class Solution {
     long long int f(long long int n,vector<long long int>&dp)
     {
         if(n<=1){
-            dp[n]=n;
-            return dp[n];
+            //dp[n]=n;
+            return n;
         }
         if(dp[n]!=-1) return dp[n];
         return dp[n]=(f(n-1,dp)+f(n-2,dp))%1000000007;
