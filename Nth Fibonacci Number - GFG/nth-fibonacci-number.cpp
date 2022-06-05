@@ -15,7 +15,7 @@ class Solution {
             return dp[n];
         }
         if(dp[n]!=-1) return dp[n];
-        return dp[n]=((long long int)f(n-1,dp)+f(n-2,dp))%1000000007;
+        return dp[n]=(f(n-1,dp)+f(n-2,dp))%1000000007;
     }
     long long int nthFibonacci(long long int n){
         // code here
