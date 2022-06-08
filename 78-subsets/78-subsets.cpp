@@ -6,16 +6,9 @@ public:
             ans.push_back(temp);
             return ;
         }
-        
-        // if(ans.size()==0) ans.push_back(temp);
-        // temp.push_back(nums[ind]);
-        // ans.push_back(temp);
-        // solve(ind+1,ans,nums,n);
-        // ans.pop_back();
-        // solve(ind+1,ans,nums,n);
-        
-        solve(ind+1,ans,nums,temp);
         temp.push_back(nums[ind]);
+        solve(ind+1,ans,nums,temp);
+        temp.pop_back();
         solve(ind+1,ans,nums,temp);
     }
     
