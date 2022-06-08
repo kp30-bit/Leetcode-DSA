@@ -19,7 +19,7 @@ public:
             for(int i=ind;i<candidates.size();i++)
             {
                 if(candidates[i]>target) return;
-                if(i && candidates[i]==candidates[i-1] &&i>ind) continue;
+                if( i>ind && candidates[i]==candidates[i-1] ) continue;
                
                 temp.push_back(candidates[i]);
                 solve(i+1,candidates,ans,temp,target-candidates[i]);
