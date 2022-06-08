@@ -9,7 +9,7 @@ public:
         solve(0,candidates,ans,temp,target);
         return ans;
     }
-    void solve(const int ind,vector<int>&candidates,vector<vector<int>>&ans,vector<int>&temp, const int target)
+    void solve( int ind,vector<int>&candidates,vector<vector<int>>&ans,vector<int>&temp,  int target)
     {
         if(target==0)
         {
