@@ -20,7 +20,7 @@ public:
             op2.push_back(')');
             solve(open,close-1,op2,ans);
         }
-        return;
+        
     }
     
     vector<string> generateParenthesis(int n) {
