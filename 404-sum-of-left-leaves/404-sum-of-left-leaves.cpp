@@ -11,17 +11,7 @@
  */
 class Solution {
 public:
-//     void solve(TreeNode *root,int &sum,TreeNode *p)
-//     {
-//         if(root==NULL) return;
-        
-//         if(root->left==NULL && root->right==NULL)
-//         {
-//             if(p->left) sum+=p->left->val;
-//         }
-//         solve(root->left,sum,root);
-//         solve(root->right,sum,root);
-//     }
+
     int sumOfLeftLeaves(TreeNode* root) {
         queue<TreeNode*>q;
         int sum=0;
