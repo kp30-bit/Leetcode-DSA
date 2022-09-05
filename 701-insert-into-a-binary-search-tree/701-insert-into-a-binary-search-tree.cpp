@@ -11,8 +11,7 @@
  */
 class Solution {
 public:
-    
-    void solve(TreeNode *root,int val, TreeNode *prev)
+     void solve(TreeNode *root,int val, TreeNode *prev)
     {
         while(root!=nullptr){
             if(root->val>val)
