@@ -34,9 +34,14 @@ public:
                 temp.clear();
             }else if(flag%2==0)
             {
-                reverse(temp.begin(),temp.end());
-                ans.push_back(temp);
+                vector<int>temp2;
+                for(int i=temp.size()-1;i>=0;i--)
+                {
+                    temp2.push_back(temp[i]);
+                }
+                ans.push_back(temp2);
                 temp.clear();
+                temp2.clear();
                 flag=1;
             }
             
