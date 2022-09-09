@@ -11,29 +11,18 @@
  */
 class Solution {
 public:
-
-    int sumOfLeftLeaves(TreeNode* root) {
-        queue<TreeNode*>q;
-        int sum=0;
-        q.push(root);
-        while(!q.empty())
-        {
-            int size=q.size();
-            while(size--)
-            {
-                TreeNode *t=q.front();
-                q.pop();
-                if(t->left){
-                    TreeNode *left=t->left;
-                    if(left->left==NULL && left->right==NULL)
-                    {
-                        sum+=left->val;
-                    }
-                }
-                if(t->left) q.push(t->left);
-                if(t->right)q.push(t->right);
-            }
+    void solve(TreeNode *root,int &ans)
+    {
+        if(root==NULL) return;
+        solve(root->left,ans);
+        if(root->left && root->left->left==NULL && root->left->right==NULL){
+            ans+=root->left->val;
         }
-        return sum;
+        solve(root->right,ans);
+    }
+    int sumOfLeftLeaves(TreeNode* root) {
+        int ans=0;
+        solve(root,ans);
+        return ans;
     }
 };
