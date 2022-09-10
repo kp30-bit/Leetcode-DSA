@@ -15,7 +15,7 @@ public:
             else if (nums[mid] > nums[r]) l = mid + 1;
 
             // mid is smaller than right - min is in left side (including mid)
-            else r = mid;
+            else if(nums[mid]< nums[r])r = mid;
         }
         return nums[l];
     }
