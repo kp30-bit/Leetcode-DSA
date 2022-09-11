@@ -3,9 +3,10 @@ public:
     int peakIndexInMountainArray(vector<int>& arr) {
         int l=0,n=arr.size();
         int r=n-1;
+        int m;
         while(l<=r)
         {
-            int m=l+(r-l)/2;
+            m=l+(r-l)/2;
             //if(arr[m]>arr[m-1] && arr[m]>arr[m+1]) return m;
             if(arr[m]<arr[m+1]){
                 l=m+1;
