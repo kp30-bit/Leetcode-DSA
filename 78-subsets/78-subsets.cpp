@@ -1,9 +1,9 @@
 class Solution {
 public:
     
-    void solve(int ind,vector<vector<int>>&ans,vector<int>&nums,vector<int>&temp)
+    void solve(int ind,vector<vector<int>>&ans,vector<int>nums,vector<int>temp)
     {
-        if(ind>=nums.size())
+        if(ind==nums.size())
         {
             ans.push_back(temp);
             return;
