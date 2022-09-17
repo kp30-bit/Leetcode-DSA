@@ -4,25 +4,21 @@ public:
     
     bool check(int row,int col,vector<string>&board,int n)
     {
-        int drow=row,dcol=col;
-        //left up diag
-        while(row>=0 && col>=0)
-        {
+        int duprow=row;
+        int dupcol=col;
+        while(row>=0 && col>=0){
             if(board[row][col]=='Q') return false;
             row--;
             col--;
         }
-        row=drow;
-        col=dcol;
-        //left
-        while(col>=0)
-        {
+        row=duprow;
+        col=dupcol;
+        while(col>=0){
             if(board[row][col]=='Q') return false;
             col--;
         }
-        //bottom left diagonal
-        row=drow;
-        col=dcol;
+        row=duprow;
+        col=dupcol;
         while(row<n && col>=0)
         {
             if(board[row][col]=='Q') return false;
@@ -31,7 +27,6 @@ public:
         }
         return true;
     }
-    
     void solve(vector<string>&board,int col,vector<vector<string>>&ans,int n)
     {
         if(col==n)
@@ -39,10 +34,8 @@ public:
             ans.push_back(board);
             return;
         }
-        for(int row=0;row<n;row++)
-        {
-            if(check(row,col,board,n))
-            {
+        for(int row=0;row<n;row++){
+            if(check(row,col,board,n)){
                 board[row][col]='Q';
                 solve(board,col+1,ans,n);
                 board[row][col]='.';
