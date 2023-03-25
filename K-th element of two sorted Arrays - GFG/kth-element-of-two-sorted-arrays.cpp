@@ -10,6 +10,7 @@ class Solution{
     {
         if(n>m) return kthElement(arr2,arr1,m,n,k);
         int low=max(0,k-m),high=min(k,n);
+       
         while(low<=high)
         {
             int cut1=(low+high)/2;
