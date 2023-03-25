@@ -9,8 +9,9 @@ class Solution{
     int kthElement(int arr1[], int arr2[], int n, int m, int k)
     {
         if(n>m) return kthElement(arr2,arr1,m,n,k);
-        int low=max(0,k-m),high=min(k,n);
-       
+        int low=max(0,k-m),high=min(k,n);//important edge case
+        //if k is smaller than the size of smaller array then your high can maximum be equal to k
+        //if k is larger than your greater array then your low cannot be 0, it will be k-m atleast.
         while(low<=high)
         {
             int cut1=(low+high)/2;
