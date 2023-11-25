@@ -7,7 +7,7 @@ class Solution {
   public:
     int solve(vector<vector<int>>&triangle,vector<vector<int>>&dp,int row,int col,int n,int m){
         if(row==n-1) return triangle[row][col];
-        if(row>n-1 || col>row+1) return 1e9;
+        // if(row>n-1 || col>row+1) return 1e9;
         if(dp[row][col]!=-1) return dp[row][col];
         int down=solve(triangle,dp,row+1,col,n,m)+triangle[row][col];
         int diag=solve(triangle,dp,row+1,col+1,n,m)+triangle[row][col];
